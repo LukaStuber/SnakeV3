@@ -175,7 +175,7 @@ namespace Snake
                         break;
                     case 1:
                         gameState = GameState.SettingsSnake;
-                        break;
+                        break; 
                     case 2:
                         gameState = GameState.SettingsApples;
                         break;
