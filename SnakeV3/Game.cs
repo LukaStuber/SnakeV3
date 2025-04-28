@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Snake
+﻿namespace Snake
 {
     class Game
     {
@@ -13,6 +11,7 @@ namespace Snake
             SettingsApples,
             Start,
             Playing,
+            Pause,
             GameOver,
             GameWon,
             Quit
@@ -45,6 +44,8 @@ namespace Snake
         int settingsSelected = 0; // 0 = board, 1 = snake, 2 = apples
         readonly string[] settingsBoardItems = ["Width: [ ]", "Height: [ ]", "Back"];
         int settingsBoardSelected = 0; // 0 = width, 1 = height, 2 = back
+        int width;
+        int height;
         ConsoleKey input;
 
         void DrawTitle()
@@ -78,11 +79,6 @@ namespace Snake
                     Console.WriteLine(items[i]);
                 }
             }
-        }
-
-        void DrawItemsSettings(string[] items, int selected)
-        {
-            for (int i = 0; i < items.Length; i++) {}
         }
 
         void DrawMainMenu()
@@ -239,6 +235,15 @@ namespace Snake
             }
         }
 
+        void StartGame()
+        {
+            board = new int[width, height];
+
+
+
+            gameState = GameState.Playing;
+        }
+
         public void Run()
         {
             gameState = GameState.MainMenu;
@@ -260,6 +265,7 @@ namespace Snake
                     case GameState.SettingsApples:
                         break;
                     case GameState.Start:
+                        StartGame();
                         break;
                     case GameState.Playing:
                         break;
