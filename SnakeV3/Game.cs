@@ -136,7 +136,7 @@ namespace Snake
             DrawTitle();
             DrawItems(settingsItems, settingsSelected);
 
-            input = Console.ReadKey(true).Key;
+            input = Console.ReadKey(true).Key;     
 
             if (input == ConsoleKey.DownArrow)
             {
