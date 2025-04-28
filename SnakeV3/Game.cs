@@ -39,7 +39,7 @@ namespace Snake
             "   ▄█    ███ ███   ███   ███    ███   ███ ▀███▄   ███    ███",
             " ▄████████▀   ▀█   █▀    ███    █▀    ███   ▀█▀   ██████████"
         ];
-        readonly string[] mainMenuItems = ["Play", "Settings", "Quit"];    
+        readonly string[] mainMenuItems = ["Play", "Settings", "Leaderboard", "Quit"];    
         int mainMenuSelected = 0; // 0 = play, 1 = settings, 2 = quit
         readonly string[] settingsItems = ["Board", "Snake", "Apples", "Back"];
         int settingsSelected = 0; // 0 = board, 1 = snake, 2 = apples
@@ -269,6 +269,7 @@ namespace Snake
                         break;
                     default: break;
                 }
+                
             }
         }
     }
