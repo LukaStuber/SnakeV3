@@ -43,8 +43,8 @@ namespace Snake
         int mainMenuSelected = 0; // 0 = play, 1 = settings, 2 = quit
         readonly string[] settingsItems = ["Board", "Snake", "Apples", "Back"];
         int settingsSelected = 0; // 0 = board, 1 = snake, 2 = apples
-        readonly string[] settingsBoardItems = ["Width", "Height"];
-        int settingsBoardSelected = 0; // 0 = width, 1 = height
+        readonly string[] settingsBoardItems = ["Width: [ ]", "Height: [ ]", "Back"];
+        int settingsBoardSelected = 0; // 0 = width, 1 = height, 2 = back
         ConsoleKey input;
 
         void DrawTitle()
@@ -78,6 +78,11 @@ namespace Snake
                     Console.WriteLine(items[i]);
                 }
             }
+        }
+
+        void DrawItemsSettings(string[] items, int selected)
+        {
+            for (int i = 0; i < items.Length; i++) {}
         }
 
         void DrawMainMenu()
@@ -188,6 +193,8 @@ namespace Snake
             DrawTitle();
             DrawItems(settingsBoardItems, settingsBoardSelected);
 
+
+
             if (input == ConsoleKey.DownArrow)
             {
                 if (settingsBoardSelected == settingsBoardItems.Length - 1)
@@ -209,6 +216,26 @@ namespace Snake
                 {
                     settingsBoardSelected--;
                 }
+            }
+
+            input = Console.ReadKey().Key;
+
+            if (input == ConsoleKey.Enter)
+            {
+                switch (settingsBoardSelected)
+                {
+                    case 0:
+                        
+                        break;
+                    case 1:
+                        
+                        break;
+                    case 2:
+                        gameState = GameState.Settings;
+                        break;
+                    
+                }
+                settingsSelected = 0;
             }
         }
 
