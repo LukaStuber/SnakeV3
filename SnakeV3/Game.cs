@@ -65,8 +65,8 @@ namespace Snake
         int settingsBoardSelected = 0; // 0 = width, 1 = height, 2 = back
         readonly int minWidth = 4;
         readonly int minHeight = 3;  
-        int width = 10;
-        int height = 9;
+        int width = 100;
+        int height = 100;
         int startingLength = 3;
         ConsoleKey input;
         Snake snake;
@@ -78,11 +78,26 @@ namespace Snake
             snake.Y = height / 2;
             snake.Length = startingLength;
 
+            for (int i = startingLength; i >= 0; i--)
+            {
+                for (int j = 0; j > startingLength; j++)
+                {
+                    board[i, snake.Y] = j;
+                }
+            }
+
             gameState = GameState.Playing;
+        }
+
+        void GameTick()
+        {
+            DrawBoard(board);
+            Console.ReadLine();
         }
 
         public void Run()
         {
+            Console.Title = "Snake";
             gameState = GameState.MainMenu;
             while (gameState != GameState.Quit)
             {
@@ -105,6 +120,7 @@ namespace Snake
                         StartGame();
                         break;
                     case GameState.Playing:
+                        GameTick();
                         break;
                     case GameState.GameOver:
                         break;

@@ -4,7 +4,47 @@
     {
         void DrawBoard(int[,] board)
         {
+            Console.Clear();
+            for (int y = 0; y < height / 2; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    if (x % 2 == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.BackgroundColor = ConsoleColor.Green;
+                    }
+                    Console.Write("▀");
+                    
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
+                Console.WriteLine();
+            }
 
+            if (height % 2 != 0)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    if (x % 2 == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    }
+                    Console.Write("▀");
+
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
+            }
         }
 
         // Menus
