@@ -1,6 +1,4 @@
-﻿using System.Net.Http.Headers;
-
-namespace Snake
+﻿namespace Snake
 {
     partial class Game
     {
@@ -65,9 +63,10 @@ namespace Snake
         int settingsBoardSelected = 0; // 0 = width, 1 = height, 2 = back
         readonly int minWidth = 4;
         readonly int minHeight = 3;  
-        int width = 100;
-        int height = 100;
+        int width = 10;
+        int height = 9;
         int startingLength = 3;
+        int tempSnakeInit = 1;
         ConsoleKey input;
         Snake snake;
 
@@ -80,10 +79,8 @@ namespace Snake
 
             for (int i = startingLength; i >= 0; i--)
             {
-                for (int j = 0; j > startingLength; j++)
-                {
-                    board[i, snake.Y] = j;
-                }
+                board[i, snake.Y] = tempSnakeInit;
+                tempSnakeInit++;
             }
 
             gameState = GameState.Playing;

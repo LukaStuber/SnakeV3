@@ -19,14 +19,29 @@
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.BackgroundColor = ConsoleColor.Green;
                     }
+
+                    if (board[x, y * 2] != 0)
+                    {
+                        if (y % 2 == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                        }
+                        else
+                        {
+                            Console.BackgroundColor = ConsoleColor.Blue;
+                        }
+                    }
+                    
+
                     Console.Write("▀");
                     
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.BackgroundColor = ConsoleColor.Black;
                 }
-                Console.WriteLine();
+                Console.WriteLine();               
             }
 
+            // falls höhe ungerade ist
             if (height % 2 != 0)
             {
                 for (int x = 0; x < width; x++)
@@ -44,6 +59,7 @@
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.BackgroundColor = ConsoleColor.Black;
                 }
+                Console.WriteLine();
             }
         }
 
