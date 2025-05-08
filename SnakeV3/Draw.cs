@@ -2,7 +2,7 @@
 {
     partial class Game
     {
-        void DrawBoard(int[,] board)
+        void DrawBoardPerformance(int[,] board)
         {
             Console.Clear();
             for (int y = 0; y < height / 2; y++)

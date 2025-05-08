@@ -88,7 +88,7 @@
 
         void GameTick()
         {
-            DrawBoard(board);
+            DrawBoardPerformance(board);
             Console.ReadLine();
         }
 
